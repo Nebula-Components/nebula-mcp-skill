@@ -1,0 +1,51 @@
+{
+  "name": "nebula-landing-page-audit",
+  "version": "1.0.0",
+  "description": "Evidence-grade landing page audit. Detects conversion leaks across 9 signals (headline, CTA, social proof, message match, mobile, load speed, SEO, ad signals, AI readiness). Every finding is prioritized by impact × effort with a specific fix. Free, no API key required.",
+  "homepage": "https://nebulacomponents.com",
+  "license": "MIT",
+  "author": {
+    "name": "Nebula Components",
+    "url": "https://nebulacomponents.com"
+  },
+  "server": {
+    "type": "remote",
+    "url": "https://mcp.nebulacomponents.com/mcp",
+    "transport": "streamable-http"
+  },
+  "tools": [
+    {
+      "name": "run_audit",
+      "description": "Run a full evidence-grade landing page audit against any public URL. Returns score (0–10), grade, and structured findings with prioritized fixes."
+    },
+    {
+      "name": "compare_audits",
+      "description": "Audit two URLs and compare them side by side. Useful for benchmarking against a competitor or comparing variants."
+    },
+    {
+      "name": "get_audit",
+      "description": "Retrieve a completed audit by its UUID."
+    },
+    {
+      "name": "recent_audits",
+      "description": "List the most recent audits in the Nebula database."
+    }
+  ],
+  "categories": [
+    "marketing",
+    "analytics",
+    "productivity"
+  ],
+  "keywords": [
+    "landing page",
+    "conversion rate optimization",
+    "CRO",
+    "audit",
+    "paid ads",
+    "Google Ads",
+    "Meta Ads",
+    "performance",
+    "marketing"
+  ],
+  "repository": "https://github.com/Nebula-Components/nebula-mcp-skill"
+}
