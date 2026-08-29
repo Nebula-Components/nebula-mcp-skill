@@ -10,8 +10,8 @@ Paste a URL. Get a structured diagnosis of why the page isn't converting paid tr
 Audits 9 conversion signals:
 
 | Signal | What it checks |
-|--------|---------------|
-| Headline | Outcome-specific, 12–90 chars, above fold |
+|--------|----------------|
+| Headline | Outcome-specific, 12-90 chars, above fold |
 | CTA | Single dominant action with outcome language |
 | Social proof | Testimonial/logo/metric near first CTA |
 | Message match | Ad headline reflected in page headline |
@@ -22,6 +22,16 @@ Audits 9 conversion signals:
 | AI readiness | JSON-LD, OG tags, clean hierarchy |
 
 Every finding includes: measured value, required standard, fix, effort, impact, confidence.
+
+## Benchmark data
+
+From 293 completed audits (Q3 2026):
+- **62%** of pages fail the headline test (H1 doesn't match the ad that sent the visitor)
+- **39%** of pages are missing social proof near the CTA
+- **40%** fail the load speed check
+- Average page has **2.7 conversion leaks**
+
+Full data: [nebulacomponents.com/research/landing-page-performance-q3-2026](https://nebulacomponents.com/research/landing-page-performance-q3-2026)
 
 ## MCP Server
 
@@ -52,6 +62,17 @@ Transport: `streamable-http` · Auth: none required
 hermes mcp add nebula --url https://mcp.nebulacomponents.com/mcp
 ```
 
+### Cursor / VS Code
+
+Add to your MCP settings:
+```json
+{
+  "nebula": {
+    "url": "https://mcp.nebulacomponents.com/mcp"
+  }
+}
+```
+
 ## Tools
 
 ### `run_audit(url)`
@@ -60,13 +81,21 @@ hermes mcp add nebula --url https://mcp.nebulacomponents.com/mcp
 run_audit("https://example.com")
 ```
 
-Returns score (0–10), grade (A–F), and prioritized findings.
+Returns score (0-10), grade (A-F), and prioritized findings.
 
 ### `compare_audits(url_a, url_b)`
 
 ```
 compare_audits("https://yourpage.com", "https://competitor.com")
 ```
+
+### `get_fix_instructions(audit_id)`
+
+```
+get_fix_instructions("audit-uuid-here")
+```
+
+Returns machine-readable repair steps for AI coding agents (Claude Code, Cursor, Aider).
 
 ### `get_audit(audit_id)` · `recent_audits(limit)`
 
@@ -79,23 +108,24 @@ Retrieve past audits by ID or list recent ones.
 Score: 6.2/10  Grade: B
 
 **Message Match** [Quick Win]
-  Issue:    Ad headline "Stop wasting ad spend" doesn't match page H1
-  Fix:      Mirror ad outcome language in H1
-  Measured: "We help businesses grow"
-  Required: Outcome-specific headline matching ad copy
-  Confidence: definitive
+Issue: Ad headline "Stop wasting ad spend" doesn't match page H1
+Fix: Mirror ad outcome language in H1
+Measured: "We help businesses grow"
+Required: Outcome-specific headline matching ad copy
+Confidence: definitive
 
 **CTA Clarity** [Quick Win]
-  Issue:    Two competing CTAs with equal visual weight
-  Fix:      Make primary CTA dominant; reduce secondary contrast
-  Confidence: definitive
+Issue: Two competing CTAs with equal visual weight
+Fix: Make primary CTA dominant; reduce secondary contrast
+Confidence: definitive
 ```
 
 ## Resources
 
 - [Free audit tool](https://nebulacomponents.com/audit) — no agent required
-- [Nebula Components](https://nebulacomponents.com) — landing page conversion optimization
-- [SKILL.md](./SKILL.md) — full skill documentation for agent frameworks
+- [How Nebula audits](https://nebulacomponents.com/how-nebula-audits) — the 9-signal methodology
+- [Q3 2026 Landing Page Research](https://nebulacomponents.com/research/landing-page-performance-q3-2026) — benchmark data from 293 audits
+- [Wikidata entity](https://www.wikidata.org/wiki/Q141206192) — Q141206192
 
 ## License
 

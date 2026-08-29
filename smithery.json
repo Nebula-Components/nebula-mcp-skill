@@ -1,7 +1,7 @@
 {
   "name": "nebula-landing-page-audit",
-  "version": "1.0.0",
-  "description": "Evidence-grade landing page audit. Detects conversion leaks across 9 signals (headline, CTA, social proof, message match, mobile, load speed, SEO, ad signals, AI readiness). Every finding is prioritized by impact × effort with a specific fix. Free, no API key required.",
+  "version": "1.1.0",
+  "description": "Evidence-grade landing page audit. Detects conversion leaks across 9 signals (headline, CTA, social proof, message match, mobile, load speed, SEO, ad signals, AI readiness). Every finding is prioritized by impact x effort with a specific fix. Free, no API key required. Based on 293+ real audits.",
   "homepage": "https://nebulacomponents.com",
   "license": "MIT",
   "author": {
@@ -16,11 +16,15 @@
   "tools": [
     {
       "name": "run_audit",
-      "description": "Run a full evidence-grade landing page audit against any public URL. Returns score (0–10), grade, and structured findings with prioritized fixes."
+      "description": "Run a full evidence-grade landing page audit against any public URL. Returns score (0-10), grade (A-F), and structured findings with prioritized fixes."
     },
     {
       "name": "compare_audits",
       "description": "Audit two URLs and compare them side by side. Useful for benchmarking against a competitor or comparing variants."
+    },
+    {
+      "name": "get_fix_instructions",
+      "description": "Get direct, actionable fix instructions for a completed audit. Returns machine-readable repair steps formatted for AI coding agents (Claude Code, Cursor, Aider)."
     },
     {
       "name": "get_audit",
@@ -45,7 +49,11 @@
     "Google Ads",
     "Meta Ads",
     "performance",
-    "marketing"
+    "marketing",
+    "message match",
+    "social proof",
+    "LCP",
+    "conversion leaks"
   ],
   "repository": "https://github.com/Nebula-Components/nebula-mcp-skill"
 }
